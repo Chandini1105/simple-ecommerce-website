@@ -1,0 +1,38 @@
+{% extends 'base/base.html' %}
+
+{% block content %} 
+<head>
+  <meta charset="UTF-8">
+  <title>Payment - Fashion central</title>
+  {% comment %} <link rel="stylesheet" href="styleee.css"> {% endcomment %}
+</head>
+<body>
+  <section class="payment-section">
+    <div class="payment-container">
+      <h1>Payment Details</h1>
+      <p>Please fill in your payment information to complete the order.</p>
+
+      <form method="POST" action="{% url 'process_payment' %}" class="payment-form">
+        {% csrf_token %}
+        <label for="cardholder">Cardholder Name</label>
+        <input type="text" id="cardholder" name="cardholder" placeholder="Name" required>
+
+        <label for="cardnumber">Card Number</label>
+        <input type="text" id="cardnumber" name="cardnumber" placeholder="Cardnumber" maxlength="19" required>
+        <div class="card-details">
+          <div>
+            <label for="expiry">Expiry Date</label>
+            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" maxlength="5" required>
+          </div>
+          <div>
+            <label for="cvv">CVV</label>
+            <input type="password" id="cvv" name="cvv" placeholder="123" maxlength="3" required>
+          </div>
+        </div>
+        <button type="submit" class="payment-button">Process Payment</button>
+      </form>
+    </div>
+  </section>
+</body>
+
+{% endblock content %}

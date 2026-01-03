@@ -1,0 +1,51 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<head>
+  <meta charset="UTF-8">
+  <title>Delivery Information - fashion central</title>
+  {% comment %} <link href="css/styles.css" rel="stylesheet" /> {% endcomment %}
+  {% comment %} <link rel="stylesheet" href="styles.css"> {% endcomment %}
+</head>
+<body>
+  <section class="delivery-section">
+    <div class="delivery-container">
+      <h1>Delivery Information</h1>
+      <p>At fashion central, we ensure that your orders are delivered quickly and safely. Below you'll find all the essential delivery details.</p>
+
+      <div class="delivery-box">
+        <h3>📦 Standard Delivery</h3>
+        <ul>
+          <li>Delivery within 4-6 business days</li>
+          <li>Free for orders above ₹50</li>
+          <li>Tracking number provided via email</li>
+        </ul>
+      </div>
+
+      <div class="delivery-box">
+        <h3>🚀 Express Delivery</h3>
+        <ul>
+          <li>Delivery within 1-2 business days</li>
+          <li>Flat rate: ₹9.99 per order</li>
+          <li>Available in selected cities</li>
+        </ul>
+      </div>
+
+      <div class="delivery-box">
+        <h3>🌍 International Shipping</h3>
+        <ul>
+          <li>Delivery within 7-14 business days</li>
+          <li>Charges depend on destination country</li>
+          <li>Customs charges may apply</li>
+        </ul>
+      </div>
+
+      <div class="delivery-note">
+        <p>🕒 Orders placed after 6 PM will be processed the next business day.</p>
+        <p>📞 For urgent delivery questions, please contact our support team at <strong>support@fashioncentral.com</strong>.</p>
+      </div>
+    </div>
+  </section>
+</body>
+
+{% endblock content %}

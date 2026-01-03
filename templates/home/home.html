@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+<div class="intro-banner-wrap">
+	<img src="media/images/banners/1.png" class="w-100 img-fluid">
+</div>
+
+<div class="container mt-5 pt-5">
+		<div class="row">
+            {% for item in products %}
+			<div class="col-md-3">
+				<a href="{% url 'product_view' item.slug %}">
+				<figure class="card card-product-grid">
+					<div class="img-wrap"> <img src="media/{{item.product_image.first.image}}"> </div>
+					<figcaption class="info-wrap border-top">
+						<b class="title">{{item.product_name}}</b>
+						<div class="price mt-2">₹{{item.price}}</div> 
+					</figcaption>
+				</figure> 
+				</a>
+			</div> 
+            {% endfor %}
+
+		</div>
+
+</div>
+
+
+{% endblock content %}
